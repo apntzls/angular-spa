@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <span class="result-style">Showing Results for : {{forecast.city}}, {{forecast.country}}</span>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <span><a href="#" ng-click="forecast.sort($event, 'temp.morn')">Morning</a></span>
+    <span><a href="#" ng-click="forecast.sort($event, 'temp.day')">Day</a></span>
+    <span><a href="#" ng-click="forecast.sort($event, 'temp.eve')">Evening</a></span>
+    <span><a href="#" ng-click="forecast.sort($event, 'temp.night')">Night</a></span>
+  </div>
+</div>
+
+<div class="panel panel-default" ng-repeat="day in forecast.days | orderBy:forecast.sortBy:forecast.reverse">
+  <div class="panel-heading">
+    <span class="margin-right20">{{ forecast.getDate(day.dt) }}</span>
+    <span>{{ forecast.getDay(day.dt) }}</span>
+    <img ng-src=" http://openweathermap.org/img/w/{{day.weather[0].icon}}.png ">
+  </div>
+  <div class="panel-body">
+    <span>Morning: {{ forecast.round(day.temp.morn) }} &deg F</span>
+    <span>Day: {{ forecast.round(day.temp.day) }} &deg F</span>
+    <span>Evening: {{ forecast.round(day.temp.eve) }} &deg F</span>
+    <span>Night: {{ forecast.round(day.temp.night) }} &deg F</span>
+  </div>
+</div>
+
+
+
+
+<!--orderBy:forecast.sortBy:forecast.reverse-->

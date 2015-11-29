@@ -1,0 +1,19 @@
+.form-control {
+  width: 80%;
+  margin: auto;
+}
+.panel-body {
+  display: flex;
+  align-items: center;
+}
+.panel-body span {
+  flex-grow: 1;
+  text-align: center;
+}
+.margin-right20 {
+  margin-right: 20px;
+}
+.result-style {
+  font-size: 1em;
+  font-weight: bold;
+}

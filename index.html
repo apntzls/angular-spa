@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="App">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weather Application</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<!-- Application styles -->
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+	<div class="container text-center">
+		<div class="jumbotron">
+			<h1><a href="#">Weather Forecast<i class="fa fa-home"></i></a></h1>
+			<form class="form-inline">
+				<div class="form-group">
+					<label for="city">City</label>
+					<input type="text" class="form-control" id="city" placeholder="New York" required ng-model="city">
+				</div>
+				<div class="form-group">
+					<label for="country">Country</label>
+					<input type="text" class="form-control" id="country" placeholder="United States" ng-model="country">
+				</div>
+				<a href="#/forecast/{{city}}/{{country}}" class="btn btn-primary">Get Your Forecast!</a>
+			</form>
+		</div>
+	</div>
+
+	<div class="container">
+		<div ng-view></div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.7/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+	<!-- Application scripts -->
+	<script src="app.js"></script>
+</body>
+
+</html>
